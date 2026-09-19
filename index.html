@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Xavathon 2027 - Towards Greener Footprints | St. Xaviers College Kolkata</title>
+  <meta name="description" content="Xavathon 2027 - Kolkata's premier college marathon. Join 3,000+ runners on 3 KM, 5 KM and 10 KM routes. Register now for St. Xavier's College Kolkata's green-themed running event." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== PAGE LOADER ========== -->
+<div id="page-loader">
+  <div class="ldr-bg-blob"></div>
+  <div class="ldr-content">
+    <div class="runner-scene">
+      <div class="speed-lines">
+        <div class="sl sl-1"></div>
+        <div class="sl sl-2"></div>
+        <div class="sl sl-3"></div>
+        <div class="sl sl-4"></div>
+      </div>
+      <svg class="runner-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="60" cy="20" r="11" fill="none" stroke="#3ecf76" stroke-width="3" stroke-linecap="round"/>
+        <line x1="60" y1="31" x2="57" y2="74" stroke="#3ecf76" stroke-width="3" stroke-linecap="round"/>
+        <g transform="translate(60,46)">
+          <line x1="0" y1="0" x2="18" y2="26" stroke="#3ecf76" stroke-width="2.5" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" values="-42;42;-42" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          </line>
+          <line x1="0" y1="0" x2="-18" y2="26" stroke="#3ecf76" stroke-width="2.5" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" values="-42;42;-42" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          </line>
+        </g>
+        <g transform="translate(57,74)">
+          <line x1="0" y1="0" x2="10" y2="56" stroke="#3ecf76" stroke-width="3" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" values="52;-52;52" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          </line>
+          <line x1="0" y1="0" x2="-10" y2="56" stroke="#3ecf76" stroke-width="3" stroke-linecap="round">
+            <animateTransform attributeName="transform" type="rotate" values="-52;52;-52" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          </line>
+        </g>
+        <line x1="8" y1="158" x2="112" y2="158" stroke="rgba(62,207,118,0.22)" stroke-width="1.5" stroke-dasharray="5 7"/>
+        <ellipse cx="57" cy="162" rx="18" ry="3" fill="rgba(62,207,118,0.12)">
+          <animate attributeName="rx" values="18;11;18" dur="0.55s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.7;0.25;0.7" dur="0.55s" repeatCount="indefinite"/>
+        </ellipse>
+      </svg>
+      <div class="ldr-dust-wrap">
+        <div class="ldr-dust ld1"></div>
+        <div class="ldr-dust ld2"></div>
+        <div class="ldr-dust ld3"></div>
+      </div>
+    </div>
+    <div class="ldr-logo-txt">XAVATHON <span>2027</span></div>
+    <div class="ldr-tagline-txt">Towards Greener Footprints</div>
+    <div class="ldr-bar-wrap"><div class="ldr-bar-fill" id="ldrFill"></div></div>
+    <div class="ldr-pct" id="ldrPct">0%</div>
+  </div>
+</div>
+
+
+<!-- ========== NAV ========== -->
+<header id="navbar">
+  <nav class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Xavathon Home">
+      <img src="sxc.svg" alt="St. Xavier's College Kolkata" class="nav-sxc-logo" />
+      <span class="nav-title">ST XAVIER'S COLLEGE <span class="nav-year">KOLKATA</span></span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#races">Races</a></li>
+      <li><a href="#green">Green</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#register" class="nav-cta">Register Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-bg-shapes">
+    <div class="hero-circle c1"></div>
+    <div class="hero-circle c2"></div>
+    <div class="hero-circle c3"></div>
+  </div>
+  <div class="hero-particles" id="particles"></div>
+
+  <div class="hero-content">
+    
+
+    <div class="hero-logo-wrap">
+      <img src="XAVATHON LOGO.svg" alt="Xavathon 2027 Logo" class="hero-logo" id="heroLogo" />
+    </div>
+
+
+    
+    <div class="hero-distances">
+      <div class="dist-pill"><span>3 KM</span><small>Fun Run</small></div>
+      <div class="dist-sep">|</div>
+      <div class="dist-pill"><span>5 KM</span><small>Challenge Run</small></div>
+      <div class="dist-sep">|</div>
+      <div class="dist-pill"><span>10 KM</span><small>Competitive Run</small></div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#register" class="btn-primary">Register Now</a>
+      <a href="#about" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-wrapper">
+    <div class="countdown-label">Race Day Countdown</div>
+    <div class="countdown" id="countdown">
+      <div class="cd-unit"><span id="cd-days">000</span><small>Days</small></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-unit"><span id="cd-hours">00</span><small>Hours</small></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-unit"><span id="cd-mins">00</span><small>Mins</small></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-unit"><span id="cd-secs">00</span><small>Secs</small></div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ========== STATS STRIP ========== -->
+<section class="stats-strip">
+  <div class="stat-item">
+    <strong class="stat-num" data-target="3000">0</strong>
+    <span>Participants Expected</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <strong class="stat-num" data-target="3">0</strong>
+    <span>Race Distances</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <strong class="stat-num" data-target="2">0</strong>
+    <span>Editions</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <strong class="stat-num" data-target="100">0</strong>
+    <span>% Eco-Friendly</span>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about-section" id="about">
+  <div class="container">
+    <div class="section-label">About the Event</div>
+    <h2 class="section-title">What is <em>Xavathon?</em></h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="about-lead">Xavathon is Kolkata's most vibrant college-organised marathon, hosted by <strong>St. Xavier's College, Kolkata</strong> - one of India's premier institutions with a 160-year legacy of excellence.</p>
+        <p>Born from a passion for sport, sustainability, and community, Xavathon invites runners of all fitness levels to lace up and make a statement - not just on the track, but for the planet. With a theme of <em>"Towards Greener Footprints,"</em> every kilometre run is a stride towards a more conscious future.</p>
+        <p>From the enthusiasm of a first-time Fun Runner to the determination of a seasoned competitive athlete, Xavathon welcomes everyone. Together we create an electrifying race-day atmosphere in the heart of Kolkata.</p>
+        <div class="about-cta-row">
+          <a href="#register" class="btn-primary">Join the Run</a>
+          <a href="#races" class="btn-text">View Race Categories &rarr;</a>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card-stack">
+          <div class="about-card card-main">
+            <div class="about-card-icon">&#127939;</div>
+            <h4>Why Run With Us?</h4>
+            <ul class="why-list">
+              <li><span class="check">&#10003;</span> Professional chip timing</li>
+              <li><span class="check">&#10003;</span> Finisher medal &amp; certificate</li>
+              <li><span class="check">&#10003;</span> Race kit &amp; eco-friendly bib</li>
+              <li><span class="check">&#10003;</span> Hydration stations every km</li>
+              <li><span class="check">&#10003;</span> Medical support throughout</li>
+              <li><span class="check">&#10003;</span> Post-race refreshments</li>
+            </ul>
+          </div>
+          <div class="about-card card-float">
+            <div class="float-num">3,000<sup>+</sup></div>
+            <div class="float-label">Expected Runners</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== RACES ========== -->
+<section class="section races-section" id="races">
+  <div class="container">
+    <div class="section-label">Race Categories</div>
+    <h2 class="section-title">Choose Your <em>Distance</em></h2>
+    <div class="races-grid">
+
+      <div class="race-card" id="race-3k">
+        <div class="race-distance-badge">3 KM</div>
+        <div class="race-icon">&#127807;</div>
+        <h3 class="race-name">Fun Run</h3>
+        <p class="race-desc">Perfect for beginners, families, and fitness enthusiasts looking to experience the joy of running in a supportive atmosphere.</p>
+        <ul class="race-features">
+          <li><span>&#128100;</span> Open to all ages</li>
+          <li><span>&#128336;</span> No timing cut-off</li>
+          <li><span>&#128093;</span> Race kit included</li>
+          <li><span>&#127973;</span> Finisher medal</li>
+        </ul>
+        <div class="race-fee">
+          <span class="fee-label">Registration Fee</span>
+          <span class="fee-amt">Coming Soon</span>
+        </div>
+        <a href="#register" class="race-btn">Register</a>
+      </div>
+
+      <div class="race-card race-featured" id="race-5k">
+        <div class="race-popular-tag">Most Popular</div>
+        <div class="race-distance-badge">5 KM</div>
+        <div class="race-icon">&#9889;</div>
+        <h3 class="race-name">Challenge Run</h3>
+        <p class="race-desc">Step up the challenge! Designed for those who want to push their limits and experience the thrill of a timed competitive run.</p>
+        <ul class="race-features">
+          <li><span>&#128100;</span> Age 16+ recommended</li>
+          <li><span>&#128336;</span> Chip-timed race</li>
+          <li><span>&#128093;</span> Premium race kit</li>
+          <li><span>&#127973;</span> Medal + certificate</li>
+        </ul>
+        <div class="race-fee">
+          <span class="fee-label">Registration Fee</span>
+          <span class="fee-amt">Coming Soon</span>
+        </div>
+        <a href="#register" class="race-btn">Register</a>
+      </div>
+
+      <div class="race-card" id="race-10k">
+        <div class="race-distance-badge">10 KM</div>
+        <div class="race-icon">&#127942;</div>
+        <h3 class="race-name">Competitive Run</h3>
+        <p class="race-desc">The flagship race for serious runners. Compete for top honours, category prizes and the coveted Xavathon champion title.</p>
+        <ul class="race-features">
+          <li><span>&#128100;</span> Age 18+ recommended</li>
+          <li><span>&#128336;</span> Chip-timed, ranked</li>
+          <li><span>&#128093;</span> Elite race kit</li>
+          <li><span>&#127942;</span> Category prizes</li>
+        </ul>
+        <div class="race-fee">
+          <span class="fee-label">Registration Fee</span>
+          <span class="fee-amt">Coming Soon</span>
+        </div>
+        <a href="#register" class="race-btn">Register</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== GREEN INITIATIVE ========== -->
+<section class="section green-section" id="green">
+  <div class="green-bg-graphic"></div>
+  <div class="container">
+    <div class="section-label light">Green Initiative</div>
+    <h2 class="section-title light">Running for a <em>Greener Future</em></h2>
+    <p class="section-subtitle light">Every step at Xavathon is a conscious commitment to the environment. We've embedded sustainability into every aspect of the event.</p>
+    <div class="green-grid">
+      <div class="green-card">
+        <div class="green-icon">&#9851;</div>
+        <h4>Zero Plastic</h4>
+        <p>Biodegradable cups, reusable bottles, and zero single-use plastic across all race stations.</p>
+      </div>
+      <div class="green-card">
+        <div class="green-icon">&#127807;</div>
+        <h4>Tree Plantation</h4>
+        <p>Every registered runner contributes to a tree plantation drive, creating a lasting green legacy.</p>
+      </div>
+      <div class="green-card">
+        <div class="green-icon">&#127758;</div>
+        <h4>Carbon Offset</h4>
+        <p>We calculate and offset the event's carbon footprint through certified environmental programmes.</p>
+      </div>
+      <div class="green-card">
+        <div class="green-icon">&#128690;</div>
+        <h4>Green Transport</h4>
+        <p>Encouraging participants to use public transport, cycling or carpooling to the venue.</p>
+      </div>
+      <div class="green-card">
+        <div class="green-icon">&#128093;</div>
+        <h4>Eco Race Kit</h4>
+        <p>Race kits made from sustainable, recycled materials - fashion meets responsibility.</p>
+      </div>
+      <div class="green-card">
+        <div class="green-icon">&#128167;</div>
+        <h4>Water Conservation</h4>
+        <p>Smart hydration stations designed to minimise water wastage throughout the race route.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA REGISTER ========== -->
+<section class="section cta-section" id="register">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-text">
+        <div class="section-label">Registration</div>
+        <h2>Ready to <em>Run?</em></h2>
+        <p>Secure your spot among 3,000+ runners at Kolkata's most exciting college marathon. Registration opens soon!</p>
+        <div class="cta-highlights">
+          <div class="cta-hl">&#128205; Park Street, Kolkata</div>
+          <div class="cta-hl">&#128197; March 2027</div>
+          <div class="cta-hl">&#127939; 3 KM | 5 KM | 10 KM</div>
+        </div>
+      </div>
+      <div class="cta-action">
+        <div class="cta-card">
+          <h3>Get Notified</h3>
+          <p>Registration details will be announced soon. Be the first to know!</p>
+          <form class="notify-form" id="notifyForm">
+            <input type="email" placeholder="Your email address" required id="notifyEmail" />
+            <button type="submit" class="btn-primary full-w">Notify Me</button>
+          </form>
+          <p class="form-note">We'll notify you when registration opens. No spam, ever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PARTNERS ========== -->
+<section class="section partners-section" id="partners">
+  <div class="container">
+    <div class="section-label">Our Partners</div>
+    <h2 class="section-title">Key <em>Partners &amp; Sponsors</em></h2>
+    <p class="section-subtitle">Xavathon 2027 is made possible by the generous support of our partners. Partner details will be announced soon.</p>
+
+    <div class="partner-tiers">
+      <div class="partner-tier">
+        <div class="tier-label">Title Partner</div>
+        <div class="partner-slots">
+          <div class="partner-slot large"><span>Coming Soon</span></div>
+        </div>
+      </div>
+      <div class="partner-tier">
+        <div class="tier-label">Powered By</div>
+        <div class="partner-slots">
+          <div class="partner-slot"><span>TBA</span></div>
+        </div>
+      </div>
+      <div class="partner-tier">
+        <div class="tier-label">Sustainability &middot; Hydration &middot; Medical &middot; Sports Partners</div>
+        <div class="partner-slots">
+          <div class="partner-slot small"><span>TBA</span></div>
+          <div class="partner-slot small"><span>TBA</span></div>
+          <div class="partner-slot small"><span>TBA</span></div>
+          <div class="partner-slot small"><span>TBA</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="become-partner">
+      <h3>Interested in Partnering?</h3>
+      <p>Join Xavathon 2027 as a sponsor and reach 3,000+ runners and thousands of spectators. Contact us to know more about our sponsorship packages.</p>
+      <a href="mailto:xavathon@sxccal.edu" class="btn-primary">Become a Partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PREVIOUS EDITION ========== -->
+<section class="section previous-section" id="gallery">
+  <div class="container">
+    <div class="section-label">Looking Back</div>
+    <h2 class="section-title">Xavathon <em>2026 Highlights</em></h2>
+    <p class="section-subtitle">A glimpse of the energy, passion, and community spirit from our inaugural edition.</p>
+    <div class="highlights-grid">
+      <div class="highlight-card hl-large">
+        <div class="hl-placeholder">
+          <div class="hl-icon">&#127939;</div>
+          <div class="hl-caption">Race Day Energy</div>
+        </div>
+        <div class="hl-overlay">
+          <h4>Race Day 2026</h4>
+          <p>Over 1,500 runners took to the streets of Kolkata in a historic inaugural event.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-placeholder p2">
+          <div class="hl-icon">&#127881;</div>
+          <div class="hl-caption">Finish Line</div>
+        </div>
+        <div class="hl-overlay">
+          <h4>Finish Line Moments</h4>
+          <p>Jubilant finishers crossing the line with medals and smiles.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-placeholder p3">
+          <div class="hl-icon">&#129309;</div>
+          <div class="hl-caption">Volunteers</div>
+        </div>
+        <div class="hl-overlay">
+          <h4>100+ Volunteers</h4>
+          <p>Our passionate volunteer team made the day unforgettable.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hl-placeholder p4">
+          <div class="hl-icon">&#127942;</div>
+          <div class="hl-caption">Awards</div>
+        </div>
+        <div class="hl-overlay">
+          <h4>Awards Ceremony</h4>
+          <p>Champions celebrated and community bonds forged at the prize distribution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTAGRAM ========== -->
+<section class="section insta-section">
+  <div class="container">
+    <div class="section-label">Social Media</div>
+    <h2 class="section-title">Follow <em>@Xavathon</em></h2>
+    <p class="section-subtitle">Stay updated with the latest news, training tips, and event updates on Instagram.</p>
+    <div class="insta-grid">
+      <div class="insta-card"><div class="insta-ph ip1">&#128247;</div></div>
+      <div class="insta-card"><div class="insta-ph ip2">&#127939;</div></div>
+      <div class="insta-card"><div class="insta-ph ip3">&#127807;</div></div>
+      <div class="insta-card"><div class="insta-ph ip4">&#128093;</div></div>
+      <div class="insta-card"><div class="insta-ph ip5">&#127973;</div></div>
+      <div class="insta-card"><div class="insta-ph ip6">&#127751;</div></div>
+    </div>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-outline insta-follow-btn">
+      Follow on Instagram
+    </a>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer" id="contact">
+  <div class="footer-top">
+    <div class="container footer-top-inner">
+      <div class="footer-brand">
+        <img src="sxc.svg" alt="St. Xavier's College Kolkata" class="footer-sxc" />
+        <div>
+          <div class="footer-event-name">Xavathon 2027</div>
+          <div class="footer-tagline">&ldquo;Towards Greener Footprints&rdquo;</div>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Event</h5>
+          <a href="#about">About Xavathon</a>
+          <a href="#races">Race Categories</a>
+          <a href="#green">Green Initiative</a>
+          <a href="#register">Register</a>
+        </div>
+        <div class="footer-col">
+          <h5>Information</h5>
+          <a href="#">Route Map</a>
+          <a href="#">Event Day Guide</a>
+          <a href="#">Participant Guide</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <a href="#">Partners &amp; Sponsors</a>
+          <a href="#">Gallery</a>
+          <a href="mailto:xavathon@sxccal.edu">Contact Us</a>
+          <a href="https://www.sxccal.edu" target="_blank" rel="noopener noreferrer">St. Xavier's College</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2027 Xavathon, St. Xavier's College (Autonomous), Kolkata. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Twitter">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
