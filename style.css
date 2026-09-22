@@ -34,13 +34,23 @@
   --gold:       #f0b429;
   --gold-light: #f7d060;
 
-  --font-main: 'Outfit', sans-serif;
+--font-main: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-oldenglish: 'UnifrakturOldEnglish', 'UnifrakturMaguntia', serif;
   --radius:    16px;
   --radius-sm: 10px;
   --shadow-glow: 0 0 40px rgba(37,99,235,0.2);
   --shadow-card: 0 8px 32px rgba(0,0,0,0.45);
   --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ---- OLD ENGLISH (UnifrakturMaguntia) SELF-HOSTED ---- */
+@font-face {
+  font-family: 'UnifrakturOldEnglish';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/unifrakturmaguntia.woff2') format('woff2');
 }
 
 /* ---- RESET ---- */
@@ -153,8 +163,8 @@ button{cursor:pointer;border:none;background:none;font-family:inherit}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .nav-logo{display:flex;align-items:center;gap:.75rem;font-family:var(--font-main);font-weight:800;font-size:1.15rem}
 .nav-sxc-logo{width:40px;height:40px;object-fit:contain;border-radius:50%;border:2px solid rgba(74,222,128,0.3)}
-.nav-title{font-family:'UnifrakturMaguntia', serif;font-size:1.6rem;font-weight:400;line-height:1;display:flex;align-items:center;gap:.3rem;}
-.nav-year{color:var(--green-glow);font-family:'UnifrakturMaguntia', serif;font-size:1.4rem;font-weight:400;letter-spacing:0.02em;align-self:flex-end;margin-bottom:0.15rem;}
+.nav-title{font-family:var(--font-oldenglish);font-size:1.6rem;font-weight:400;line-height:1;display:flex;align-items:center;gap:.3rem;}
+.nav-year{color:var(--green-glow);font-family:var(--font-oldenglish);font-size:1.4rem;font-weight:400;letter-spacing:0.02em;align-self:flex-end;margin-bottom:0.15rem;}
 
 /* ---- WORD ANIMATIONS ---- */
 .anim-word { display: inline-block; opacity: 0; }
