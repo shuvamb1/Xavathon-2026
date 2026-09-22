@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,49 +17,20 @@
   <div class="ldr-bg-blob"></div>
   <div class="ldr-content">
     <div class="runner-scene">
+      <img src="XAVATHON LOGO.svg" alt="Loading" class="runner-svg" />
       <div class="speed-lines">
-        <div class="sl sl-1"></div>
-        <div class="sl sl-2"></div>
-        <div class="sl sl-3"></div>
-        <div class="sl sl-4"></div>
-      </div>
-      <svg class="runner-svg" viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="60" cy="20" r="11" fill="none" stroke="#3ecf76" stroke-width="3" stroke-linecap="round"/>
-        <line x1="60" y1="31" x2="57" y2="74" stroke="#3ecf76" stroke-width="3" stroke-linecap="round"/>
-        <g transform="translate(60,46)">
-          <line x1="0" y1="0" x2="18" y2="26" stroke="#3ecf76" stroke-width="2.5" stroke-linecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="-42;42;-42" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-          </line>
-          <line x1="0" y1="0" x2="-18" y2="26" stroke="#3ecf76" stroke-width="2.5" stroke-linecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="-42;42;-42" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-          </line>
-        </g>
-        <g transform="translate(57,74)">
-          <line x1="0" y1="0" x2="10" y2="56" stroke="#3ecf76" stroke-width="3" stroke-linecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="52;-52;52" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-          </line>
-          <line x1="0" y1="0" x2="-10" y2="56" stroke="#3ecf76" stroke-width="3" stroke-linecap="round">
-            <animateTransform attributeName="transform" type="rotate" values="-52;52;-52" dur="0.55s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-          </line>
-        </g>
-        <line x1="8" y1="158" x2="112" y2="158" stroke="rgba(62,207,118,0.22)" stroke-width="1.5" stroke-dasharray="5 7"/>
-        <ellipse cx="57" cy="162" rx="18" ry="3" fill="rgba(62,207,118,0.12)">
-          <animate attributeName="rx" values="18;11;18" dur="0.55s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.7;0.25;0.7" dur="0.55s" repeatCount="indefinite"/>
-        </ellipse>
-      </svg>
-      <div class="ldr-dust-wrap">
-        <div class="ldr-dust ld1"></div>
-        <div class="ldr-dust ld2"></div>
-        <div class="ldr-dust ld3"></div>
+        <div class="sl sl-1"></div><div class="sl sl-2"></div><div class="sl sl-3"></div><div class="sl sl-4"></div>
       </div>
     </div>
-    <div class="ldr-logo-txt">XAVATHON <span>2027</span></div>
-    <div class="ldr-tagline-txt">Towards Greener Footprints</div>
-    <div class="ldr-bar-wrap"><div class="ldr-bar-fill" id="ldrFill"></div></div>
-    <div class="ldr-pct" id="ldrPct">0%</div>
+    <div class="ldr-dust-wrap">
+      <div class="ldr-dust ld1"></div><div class="ldr-dust ld2"></div><div class="ldr-dust ld3"></div>
+    </div>
+    <div class="ldr-bar-wrap"><div class="ldr-bar-fill"></div></div>
+    <div class="ldr-pct">LOADING...</div>
   </div>
 </div>
+
+
 
 
 <!-- ========== NAV ========== -->
@@ -86,6 +57,10 @@
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="home">
+  <!-- Cover Image -->
+  <img src="back.jpg" alt="Xavathon 2027 Cover" class="hero-cover-img" />
+  <div class="hero-cover-overlay"></div>
+
   <div class="hero-bg-shapes">
     <div class="hero-circle c1"></div>
     <div class="hero-circle c2"></div>
@@ -120,13 +95,13 @@
   <div class="countdown-wrapper">
     <div class="countdown-label">Race Day Countdown</div>
     <div class="countdown" id="countdown">
-      <div class="cd-unit"><span id="cd-days">000</span><small>Days</small></div>
+      <div class="cd-unit"><span id="cd-months">00</span><small>Months</small></div>
+      <div class="cd-colon">:</div>
+      <div class="cd-unit"><span id="cd-days">00</span><small>Days</small></div>
       <div class="cd-colon">:</div>
       <div class="cd-unit"><span id="cd-hours">00</span><small>Hours</small></div>
       <div class="cd-colon">:</div>
       <div class="cd-unit"><span id="cd-mins">00</span><small>Mins</small></div>
-      <div class="cd-colon">:</div>
-      <div class="cd-unit"><span id="cd-secs">00</span><small>Secs</small></div>
     </div>
   </div>
 
@@ -177,7 +152,7 @@
       <div class="about-visual">
         <div class="about-card-stack">
           <div class="about-card card-main">
-            <div class="about-card-icon">&#127939;</div>
+            <img src="father.jpg" alt="Father" style="width: 100%; height: auto; border-radius: var(--radius-sm); margin-bottom: 1.5rem;" />
             <h4>Why Run With Us?</h4>
             <ul class="why-list">
               <li><span class="check">&#10003;</span> Professional chip timing</li>
@@ -207,14 +182,14 @@
 
       <div class="race-card" id="race-3k">
         <div class="race-distance-badge">3 KM</div>
-        <div class="race-icon">&#127807;</div>
+        <div class="race-icon"></div>
         <h3 class="race-name">Fun Run</h3>
         <p class="race-desc">Perfect for beginners, families, and fitness enthusiasts looking to experience the joy of running in a supportive atmosphere.</p>
         <ul class="race-features">
-          <li><span>&#128100;</span> Open to all ages</li>
-          <li><span>&#128336;</span> No timing cut-off</li>
-          <li><span>&#128093;</span> Race kit included</li>
-          <li><span>&#127973;</span> Finisher medal</li>
+          <li>Open to all ages</li>
+          <li>No timing cut-off</li>
+          <li>Race kit included</li>
+          <li>Finisher medal</li>
         </ul>
         <div class="race-fee">
           <span class="fee-label">Registration Fee</span>
@@ -223,17 +198,16 @@
         <a href="#register" class="race-btn">Register</a>
       </div>
 
-      <div class="race-card race-featured" id="race-5k">
-        <div class="race-popular-tag">Most Popular</div>
+      <div class="race-card" id="race-5k">
         <div class="race-distance-badge">5 KM</div>
-        <div class="race-icon">&#9889;</div>
+        <div class="race-icon"></div>
         <h3 class="race-name">Challenge Run</h3>
         <p class="race-desc">Step up the challenge! Designed for those who want to push their limits and experience the thrill of a timed competitive run.</p>
         <ul class="race-features">
-          <li><span>&#128100;</span> Age 16+ recommended</li>
-          <li><span>&#128336;</span> Chip-timed race</li>
-          <li><span>&#128093;</span> Premium race kit</li>
-          <li><span>&#127973;</span> Medal + certificate</li>
+          <li>Age 16+ recommended</li>
+          <li>Chip-timed race</li>
+          <li>Premium race kit</li>
+          <li>Medal + certificate</li>
         </ul>
         <div class="race-fee">
           <span class="fee-label">Registration Fee</span>
@@ -244,14 +218,14 @@
 
       <div class="race-card" id="race-10k">
         <div class="race-distance-badge">10 KM</div>
-        <div class="race-icon">&#127942;</div>
+        <div class="race-icon"></div>
         <h3 class="race-name">Competitive Run</h3>
         <p class="race-desc">The flagship race for serious runners. Compete for top honours, category prizes and the coveted Xavathon champion title.</p>
         <ul class="race-features">
-          <li><span>&#128100;</span> Age 18+ recommended</li>
-          <li><span>&#128336;</span> Chip-timed, ranked</li>
-          <li><span>&#128093;</span> Elite race kit</li>
-          <li><span>&#127942;</span> Category prizes</li>
+          <li>Age 18+ recommended</li>
+          <li>Chip-timed, ranked</li>
+          <li>Elite race kit</li>
+          <li>Category prizes</li>
         </ul>
         <div class="race-fee">
           <span class="fee-label">Registration Fee</span>
@@ -271,34 +245,37 @@
     <div class="section-label light">Green Initiative</div>
     <h2 class="section-title light">Running for a <em>Greener Future</em></h2>
     <p class="section-subtitle light">Every step at Xavathon is a conscious commitment to the environment. We've embedded sustainability into every aspect of the event.</p>
+    
+    <img src="green.jpg" alt="Green Initiative" style="width: 100%; height: 350px; object-fit: cover; border-radius: var(--radius); margin-bottom: 3rem; box-shadow: var(--shadow-card);" class="reveal" />
+
     <div class="green-grid">
       <div class="green-card">
-        <div class="green-icon">&#9851;</div>
+        <div class="green-icon"></div>
         <h4>Zero Plastic</h4>
         <p>Biodegradable cups, reusable bottles, and zero single-use plastic across all race stations.</p>
       </div>
       <div class="green-card">
-        <div class="green-icon">&#127807;</div>
+        <div class="green-icon"></div>
         <h4>Tree Plantation</h4>
         <p>Every registered runner contributes to a tree plantation drive, creating a lasting green legacy.</p>
       </div>
       <div class="green-card">
-        <div class="green-icon">&#127758;</div>
+        <div class="green-icon"></div>
         <h4>Carbon Offset</h4>
         <p>We calculate and offset the event's carbon footprint through certified environmental programmes.</p>
       </div>
       <div class="green-card">
-        <div class="green-icon">&#128690;</div>
+        <div class="green-icon"></div>
         <h4>Green Transport</h4>
         <p>Encouraging participants to use public transport, cycling or carpooling to the venue.</p>
       </div>
       <div class="green-card">
-        <div class="green-icon">&#128093;</div>
+        <div class="green-icon"></div>
         <h4>Eco Race Kit</h4>
         <p>Race kits made from sustainable, recycled materials - fashion meets responsibility.</p>
       </div>
       <div class="green-card">
-        <div class="green-icon">&#128167;</div>
+        <div class="green-icon"></div>
         <h4>Water Conservation</h4>
         <p>Smart hydration stations designed to minimise water wastage throughout the race route.</p>
       </div>
@@ -315,9 +292,9 @@
         <h2>Ready to <em>Run?</em></h2>
         <p>Secure your spot among 3,000+ runners at Kolkata's most exciting college marathon. Registration opens soon!</p>
         <div class="cta-highlights">
-          <div class="cta-hl">&#128205; Park Street, Kolkata</div>
-          <div class="cta-hl">&#128197; March 2027</div>
-          <div class="cta-hl">&#127939; 3 KM | 5 KM | 10 KM</div>
+          <div class="cta-hl">Park Street, Kolkata</div>
+          <div class="cta-hl">January 2027</div>
+          <div class="cta-hl">3 KM | 5 KM | 10 KM</div>
         </div>
       </div>
       <div class="cta-action">
@@ -382,43 +359,38 @@
     <p class="section-subtitle">A glimpse of the energy, passion, and community spirit from our inaugural edition.</p>
     <div class="highlights-grid">
       <div class="highlight-card hl-large">
-        <div class="hl-placeholder">
-          <div class="hl-icon">&#127939;</div>
-          <div class="hl-caption">Race Day Energy</div>
-        </div>
+        <img src="g1.jpg" alt="Gallery 1" class="hl-img" />
         <div class="hl-overlay">
           <h4>Race Day 2026</h4>
           <p>Over 1,500 runners took to the streets of Kolkata in a historic inaugural event.</p>
         </div>
       </div>
       <div class="highlight-card">
-        <div class="hl-placeholder p2">
-          <div class="hl-icon">&#127881;</div>
-          <div class="hl-caption">Finish Line</div>
-        </div>
+        <img src="g2.jpg" alt="Gallery 2" class="hl-img" />
         <div class="hl-overlay">
           <h4>Finish Line Moments</h4>
           <p>Jubilant finishers crossing the line with medals and smiles.</p>
         </div>
       </div>
       <div class="highlight-card">
-        <div class="hl-placeholder p3">
-          <div class="hl-icon">&#129309;</div>
-          <div class="hl-caption">Volunteers</div>
-        </div>
+        <img src="g3.jpg" alt="Gallery 3" class="hl-img" />
         <div class="hl-overlay">
           <h4>100+ Volunteers</h4>
           <p>Our passionate volunteer team made the day unforgettable.</p>
         </div>
       </div>
       <div class="highlight-card">
-        <div class="hl-placeholder p4">
-          <div class="hl-icon">&#127942;</div>
-          <div class="hl-caption">Awards</div>
-        </div>
+        <img src="g4.jpg" alt="Gallery 4" class="hl-img" />
         <div class="hl-overlay">
           <h4>Awards Ceremony</h4>
           <p>Champions celebrated and community bonds forged at the prize distribution.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <img src="g5.jpg" alt="Gallery 5" class="hl-img" />
+        <div class="hl-overlay">
+          <h4>Memories</h4>
+          <p>Cherishing the unforgettable moments.</p>
         </div>
       </div>
     </div>
@@ -432,12 +404,12 @@
     <h2 class="section-title">Follow <em>@Xavathon</em></h2>
     <p class="section-subtitle">Stay updated with the latest news, training tips, and event updates on Instagram.</p>
     <div class="insta-grid">
-      <div class="insta-card"><div class="insta-ph ip1">&#128247;</div></div>
-      <div class="insta-card"><div class="insta-ph ip2">&#127939;</div></div>
-      <div class="insta-card"><div class="insta-ph ip3">&#127807;</div></div>
-      <div class="insta-card"><div class="insta-ph ip4">&#128093;</div></div>
-      <div class="insta-card"><div class="insta-ph ip5">&#127973;</div></div>
-      <div class="insta-card"><div class="insta-ph ip6">&#127751;</div></div>
+      <div class="insta-card"><div class="insta-ph ip1"></div></div>
+      <div class="insta-card"><div class="insta-ph ip2"></div></div>
+      <div class="insta-card"><div class="insta-ph ip3"></div></div>
+      <div class="insta-card"><div class="insta-ph ip4"></div></div>
+      <div class="insta-card"><div class="insta-ph ip5"></div></div>
+      <div class="insta-card"><div class="insta-ph ip6"></div></div>
     </div>
     <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-outline insta-follow-btn">
       Follow on Instagram
