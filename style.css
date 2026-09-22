@@ -44,13 +44,13 @@
   --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ---- OLD ENGLISH (UnifrakturMaguntia) SELF-HOSTED ---- */
+
 @font-face {
-  font-family: 'UnifrakturOldEnglish';
+  font-family: 'Canterbury';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fonts/unifrakturmaguntia.woff2') format('woff2');
+  src: url('fonts/Canterbury.ttf') format('ttf');
 }
 
 /* ---- RESET ---- */
