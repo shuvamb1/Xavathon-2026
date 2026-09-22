@@ -1,30 +1,18 @@
-/* PAGE LOADER */
-(function(){
-  var loader = document.getElementById("page-loader");
-  var pctEl  = document.getElementById("ldrPct");
-  var pct = 0, hidden = false;
-  var counter = setInterval(function(){
-    if(hidden){clearInterval(counter);return;}
-    pct = Math.min(pct + Math.random()*4.5, 99);
-    if(pctEl) pctEl.textContent = Math.floor(pct)+"%";
-  }, 75);
-  function hide(){
-    if(hidden) return;
-    hidden = true;
-    clearInterval(counter);
-    if(pctEl) pctEl.textContent = "100%";
-    setTimeout(function(){
-      if(loader){ loader.classList.add("ldr-hidden"); }
-      setTimeout(function(){ if(loader) loader.style.display="none"; }, 700);
-    }, 300);
-  }
-  var minT = setTimeout(hide, 2200);
-  window.addEventListener("load", function(){ clearTimeout(minT); setTimeout(hide, 400); });
-})();
+
 
 ﻿/* ==========================================
    XAVATHON 2027 - SCRIPT.JS
    ========================================== */
+
+// ---- Page Loader ----
+window.addEventListener('load', () => {
+  const loader = document.getElementById('page-loader');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('ldr-hidden');
+    }, 500);
+  }
+});
 
 // ---- Navbar scroll ----
 const navbar = document.getElementById('navbar');
@@ -50,12 +38,12 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // ---- Countdown Timer ----
-// Target: 1st March 2027
-const target = new Date('2027-03-01T06:00:00');
-const cdDays  = document.getElementById('cd-days');
-const cdHours = document.getElementById('cd-hours');
-const cdMins  = document.getElementById('cd-mins');
-const cdSecs  = document.getElementById('cd-secs');
+// Target: 1st January 2027
+const target = new Date('2027-01-01T06:00:00');
+const cdMonths = document.getElementById('cd-months');
+const cdDays   = document.getElementById('cd-days');
+const cdHours  = document.getElementById('cd-hours');
+const cdMins   = document.getElementById('cd-mins');
 
 function pad(n, width) {
   const s = String(n);
@@ -66,23 +54,32 @@ function updateCountdown() {
   const now  = new Date();
   const diff = target - now;
   if (diff <= 0) {
-    cdDays.textContent = '000';
-    cdHours.textContent = '00';
-    cdMins.textContent  = '00';
-    cdSecs.textContent  = '00';
+    cdMonths.textContent = '00';
+    cdDays.textContent   = '00';
+    cdHours.textContent  = '00';
+    cdMins.textContent   = '00';
     return;
   }
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000)  / 60000);
-  const s = Math.floor((diff % 60000)    / 1000);
-  cdDays.textContent  = pad(d, 3);
-  cdHours.textContent = pad(h, 2);
-  cdMins.textContent  = pad(m, 2);
-  cdSecs.textContent  = pad(s, 2);
+  // Calculate whole months remaining
+  let mo = (target.getFullYear() - now.getFullYear()) * 12 + (target.getMonth() - now.getMonth());
+  // Adjust if the day-of-month hasn't been reached yet in the current month
+  const tempDate = new Date(now.getFullYear(), now.getMonth() + mo, now.getDate(),
+                            now.getHours(), now.getMinutes(), now.getSeconds());
+  if (tempDate > target) mo--;
+  // Remaining diff after subtracting whole months
+  const monthStart = new Date(now.getFullYear(), now.getMonth() + mo, now.getDate(),
+                              now.getHours(), now.getMinutes(), now.getSeconds());
+  const rem  = target - monthStart;
+  const d = Math.floor(rem / 86400000);
+  const h = Math.floor((rem % 86400000) / 3600000);
+  const m = Math.floor((rem % 3600000)  / 60000);
+  cdMonths.textContent = pad(Math.max(mo, 0), 2);
+  cdDays.textContent   = pad(d, 2);
+  cdHours.textContent  = pad(h, 2);
+  cdMins.textContent   = pad(m, 2);
 }
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 60000);
 
 // ---- Animated Particles ----
 const particlesContainer = document.getElementById('particles');
@@ -152,14 +149,150 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 if (statsStrip) counterObserver.observe(statsStrip);
 
-// Auto-add reveal classes to section children
-document.querySelectorAll('.section-title, .section-label, .section-subtitle, .about-text, .about-visual, .race-card, .green-card, .highlight-card, .partner-tier, .insta-card, .cta-box')
+// Auto-add reveal classes to section children (cards etc, NOT headings — handled separately)
+document.querySelectorAll('.about-text, .about-visual, .race-card, .green-card, .highlight-card, .partner-tier, .insta-card, .cta-box')
   .forEach((el, i) => {
     el.classList.add('reveal');
     if (i % 3 === 1) el.classList.add('reveal-delay-1');
     if (i % 3 === 2) el.classList.add('reveal-delay-2');
     observer.observe(el);
   });
+
+// ==========================================
+// HEADING TYPEWRITER ANIMATIONS
+// ==========================================
+
+// -- 1. Section Labels: slide-in + underline sweep --
+const labelObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('lbl-visible');
+      labelObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.section-label').forEach(el => labelObserver.observe(el));
+
+// -- 2. Section Titles: Text Animations --
+function applyTextAnimation(titleEl) {
+  if (titleEl.dataset.animApplied) return;
+  titleEl.dataset.animApplied = '1';
+
+  const animType = titleEl.dataset.anim || 'typewriter';
+
+  if (animType === 'none') return;
+
+  if (animType === 'typewriter') {
+    // Collect child nodes into line groups
+    const children = Array.from(titleEl.childNodes);
+    const frag = document.createDocumentFragment();
+    const CHAR_SPEED = 0.04;
+    const LINE_GAP   = 0.15;
+    let cumulativeDelay = 0;
+
+    children.forEach((node) => {
+      const span = document.createElement('span');
+      span.className = 'tw-line';
+
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent.replace(/\n/g, '').trim();
+        if (!text) return;
+        span.textContent = text;
+        const dur = Math.max(0.4, text.length * CHAR_SPEED);
+        span.style.setProperty('--tw-dur', dur + 's');
+        span.style.setProperty('--tw-delay', cumulativeDelay + 's');
+        cumulativeDelay += dur + LINE_GAP;
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const clone = node.cloneNode(true);
+        span.appendChild(clone);
+        const text = node.textContent;
+        const dur = Math.max(0.4, text.length * CHAR_SPEED);
+        span.style.setProperty('--tw-dur', dur + 's');
+        span.style.setProperty('--tw-delay', cumulativeDelay + 's');
+        cumulativeDelay += dur + LINE_GAP;
+      } else {
+        return;
+      }
+      frag.appendChild(span);
+    });
+
+    titleEl.innerHTML = '';
+    titleEl.appendChild(frag);
+
+    const lines = titleEl.querySelectorAll('.tw-line');
+    if (lines.length) {
+      lines[lines.length - 1].classList.add('tw-cursor');
+      const lastLine = lines[lines.length - 1];
+      const lastDelay  = parseFloat(lastLine.style.getPropertyValue('--tw-delay') || 0);
+      const lastDur    = parseFloat(lastLine.style.getPropertyValue('--tw-dur') || 0.8);
+      setTimeout(() => lastLine.classList.add('tw-done'), (lastDelay + lastDur + 0.2) * 1000);
+    }
+  } else {
+    // Other animations: split by word
+    const children = Array.from(titleEl.childNodes);
+    const frag = document.createDocumentFragment();
+    let wordIndex = 0;
+
+    children.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const words = node.textContent.split(' ');
+        words.forEach(word => {
+          if (!word.trim()) { frag.appendChild(document.createTextNode(' ')); return; }
+          const span = document.createElement('span');
+          span.className = `anim-word ${animType}`;
+          span.textContent = word;
+          span.style.animationDelay = (wordIndex * 0.1) + 's';
+          frag.appendChild(span);
+          frag.appendChild(document.createTextNode(' '));
+          wordIndex++;
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const clone = node.cloneNode(true);
+        clone.className = (clone.className + ` anim-word ${animType}`).trim();
+        clone.style.animationDelay = (wordIndex * 0.1) + 's';
+        frag.appendChild(clone);
+        frag.appendChild(document.createTextNode(' '));
+        wordIndex++;
+      }
+    });
+
+    titleEl.innerHTML = '';
+    titleEl.appendChild(frag);
+  }
+}
+
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const titleEl = entry.target;
+      applyTextAnimation(titleEl);
+      requestAnimationFrame(() => {
+        titleEl.querySelectorAll('.tw-line').forEach(line => line.classList.add('tw-animate'));
+        titleEl.querySelectorAll('.anim-word').forEach(word => word.classList.add('anim-animate'));
+      });
+      titleObserver.unobserve(titleEl);
+    }
+  });
+}, { threshold: 0.35 });
+document.querySelectorAll('.section-title').forEach(el => titleObserver.observe(el));
+
+// -- 3. Section Subtitles: delayed slide-up --
+const subtitleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('sub-visible');
+      subtitleObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.section-subtitle').forEach(el => subtitleObserver.observe(el));
+
+// Also animate the CTA h2 like a section-title
+document.querySelectorAll('.cta-text h2').forEach(el => {
+  el.classList.add('section-title');
+  el.dataset.anim = 'bounce-in';
+  titleObserver.observe(el);
+});
 
 // ---- Notify form ----
 const notifyForm = document.getElementById('notifyForm');
@@ -193,7 +326,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
       navAs.forEach(a => {
         a.style.color = '';
         if (a.getAttribute('href') === '#' + id) {
-          a.style.color = 'var(--green-glow)';
+          a.style.color = 'var(--blue-glow)';
         }
       });
     }
